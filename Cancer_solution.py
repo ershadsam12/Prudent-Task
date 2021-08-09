@@ -198,6 +198,10 @@ def nn_model():
     best_parameters = grid_search.best_params_
     best_accuracy = grid_search.best_score_
     start_time = time.time()
+    #creating sequential model
+    #the input are considered as 30 as data has 30 columns, activation is relu
+    #hidden layers were being added and by reducing the neurons
+    #output layer has single neuron and activation function is sigmoid and loss is binary cross entropy
     cancer_model = Sequential()
     cancer_model.add(Dense(units = 30, kernel_initializer = 'glorot_uniform', activation = 'relu'))
     cancer_model.add(Dense(16, kernel_initializer = 'glorot_uniform', activation = 'relu'))
